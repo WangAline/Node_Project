@@ -1,0 +1,10 @@
+<div *ngIf="currentFlashcard">
+  <h2>{{ currentFlashcard.question }}</h2>
+  <button (click)="onAnswer()">Show Answer</button>
+  <div *ngIf="showAnswer">
+    <p>{{ currentFlashcard.answer }}</p>
+    <button (click)="onScore(0)">Hard</button>
+    <button (click)="onScore(1)">Good</button>
+    <button (click)="onScore(2)">Easy</button>
+  </div>
+</div>
