@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LessonEditFormComponent} from "./lesson-edit-form/lesson-edit-form.component";
-import { LessonListPageComponent } from './lesson-list-page/lesson-list-page.component';
-import { TestPage2Component } from './test-page2/test-page2.component';
+import { MainComponent } from './main/main.component';
+import { DecksComponent } from './decks/decks.component';
+import { DeckComponent } from './deck/deck.component';
 
 const routes: Routes = [
-  { path:'lesson-edit-form', component: LessonEditFormComponent },
-  { path:'lesson-list', component: LessonListPageComponent },
-  { path:'test-page2', component: TestPage2Component },
- ];
+  { path: 'main', component: MainComponent },
+  { path: 'decks', component: DecksComponent },
+  { path: 'deck/:id', component: DeckComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-  
 })
 export class AppRoutingModule { }
-

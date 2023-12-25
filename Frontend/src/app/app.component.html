@@ -1,22 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Anki Learning App</a>
   <ul class="navbar-nav mr-auto">
-  <li ngbDropdown class="nav-item">
-  <a ngbDropdownToggle id="navbarMenu2" class="nav-link dropdown-toggle" role="button">
-  Menu2
-  </a>
-  <div ngbDropdownMenu aria-labelledby="navbarMenu2" class="dropdown-menu">
-  <a class="dropdown-item" routerLink="/lesson-edit-form">Lesson Edit Form...</a>
-  <a class="dropdown-item" routerLink="/lesson-list">Lessons</a>
-  <a class="dropdown-item" routerLink="/test-page2">Test Page2</a>
-  </div>
-  </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/main">Main</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/decks">Decks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/deck/1">Deck</a> <!-- replace 1 with the id of the deck you want to link to -->
+    </li>
   </ul>
- </nav>
+</nav>
 
- <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
  <br/>
  <a routerLink="/">Home</a>
- 
- 
+

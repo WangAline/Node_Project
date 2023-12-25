@@ -4,34 +4,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LessonEditFormComponent } from './lesson-edit-form/lesson-edit-form.component';
-import { LessonListPageComponent } from './lesson-list-page/lesson-list-page.component';
-import { TestPage2Component } from './test-page2/test-page2.component';
 
 import { FormsModule } from "@angular/forms";
-import { NumberDisplayComponent } from './number-display/number-display.component';
-import { NumberStepsComponent } from './number-steps/number-steps.component';
-import { NumberEditComponent } from './number-edit/number-edit.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { MainComponent } from './main/main.component';
+import { DecksComponent } from './decks/decks.component';
+import { DeckComponent } from './deck/deck.component';
+import { DecksService } from './decks.service';
+import {FlashcardsService} from "./flashcards.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LessonEditFormComponent,
-    LessonListPageComponent,
-    TestPage2Component,
-    NumberDisplayComponent,
-    NumberStepsComponent,
-    NumberEditComponent
+    MainComponent,
+    DecksComponent,
+    DeckComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule,// <= for [(ngModel)] supports
-    HttpClientModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [DecksService, FlashcardsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
