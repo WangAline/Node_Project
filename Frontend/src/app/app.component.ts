@@ -6,9 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-  title = 'app2';
+  title = 'Anki Angular App';
 
   ngOnInit(): void {
     console.log('AppComponent.ngOnInit');
   }
 }
+

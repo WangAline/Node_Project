@@ -11,16 +11,21 @@ export class MainComponent implements OnInit {
   flashcards: any[] = [];
   showAnswer: boolean = false;
   scores: any;
+  title: string = 'empty';
+  decks: any[] = [];
   constructor(private flashcardsService: FlashcardsService) { }
 
   ngOnInit(): void {
-    this.flashcardsService.getFlashcards(1).subscribe(flashcards => {
-      this.flashcards = flashcards;
-      this.currentFlashcard = this.flashcards[this.currentCardIndex];
+    this.flashcardsService.getDecks().subscribe(decks => { // fetch the decks
+      this.decks = decks;
+      if (this.decks.length > 0) {
+        this.loadDeck(this.decks[0].id);
+      }
     });
-    this.flashcardsService.getScores(1).subscribe(scores => {
-      this.scores = scores;
-    });
+
+  }
+  onDeckChange(deckId: number): void {
+    this.loadDeck(deckId);
   }
 
   nextCard(): void {
@@ -49,5 +54,22 @@ export class MainComponent implements OnInit {
     });
     this.showAnswer = false;
     this.nextCard();
+  }
+  updateTitle(newTitle: string): void {
+    this.flashcardsService.updateDeckTitle(1, newTitle).subscribe(updatedTitle => { // update the deck title
+      this.title = updatedTitle;
+    });
+  }
+  loadDeck(deckId: number): void {
+    this.flashcardsService.getFlashcards(deckId).subscribe(flashcards => {
+      this.flashcards = flashcards;
+      this.currentFlashcard = this.flashcards[this.currentCardIndex];
+    });
+    this.flashcardsService.getScores(deckId).subscribe(scores => {
+      this.scores = scores;
+    });
+    this.flashcardsService.getDeckTitle(deckId).subscribe(title => {
+      this.title = title;
+    });
   }
 }

@@ -18,6 +18,7 @@ function newId() {
 }
 let flashcardsDeck = [{
         id: 1,
+        title: 'Capitals',
         flashcards: [
             {
                 id: 1,
@@ -124,6 +125,7 @@ let flashcardsDeck = [{
     },
     {
         id: 2,
+        title: 'Largest Cities',
         flashcards: [
             {
                 id: 1,
@@ -292,6 +294,7 @@ app.post('/flashcardsDeck', (req, res) => {
     let deck = req.body;
     const lastDeckId = ((_a = flashcardsDeck[flashcardsDeck.length - 1]) === null || _a === void 0 ? void 0 : _a.id) || 0;
     deck.id = lastDeckId + 1;
+    deck.title = req.body.title;
     flashcardsDeck.push(deck);
     res.send(deck);
 });
@@ -317,6 +320,7 @@ app.put('/flashcardsDeck/:id', (req, res) => {
     if (deckIndex !== -1) {
         const updatedDeck = req.body;
         updatedDeck.id = id; // Preserve the id
+        updatedDeck.title = req.body.title;
         flashcardsDeck[deckIndex] = updatedDeck;
         res.send(updatedDeck);
     }
@@ -331,6 +335,29 @@ app.delete('/flashcardsDeck/:id', (req, res) => {
     if (deckIndex !== -1) {
         flashcardsDeck.splice(deckIndex, 1);
         res.send({ message: 'Deck deleted' });
+    }
+    else {
+        res.status(404).send({ message: 'Deck not found' });
+    }
+});
+// GET endpoint to fetch the title of a specific deck:
+app.get('/flashcardsDeck/:id/title', (req, res) => {
+    const id = Number(req.params.id);
+    const deck = flashcardsDeck.find(deck => deck.id === id);
+    if (deck) {
+        res.send(deck.title);
+    }
+    else {
+        res.status(404).send({ message: 'Deck not found' });
+    }
+});
+// PUT endpoint to update the title of a specific deck:
+app.put('/flashcardsDeck/:id/title', (req, res) => {
+    const id = Number(req.params.id);
+    const deck = flashcardsDeck.find(deck => deck.id === id);
+    if (deck) {
+        deck.title = req.body.title;
+        res.send(deck.title);
     }
     else {
         res.status(404).send({ message: 'Deck not found' });

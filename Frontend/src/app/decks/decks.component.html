@@ -1,6 +1,6 @@
 <button (click)="addDeck()">Add Deck</button>
 <div *ngFor="let deck of decks">
-  <h2>{{ deck.id }}</h2>
+  <h2>{{ deck.title }}</h2>
   <button (click)="removeDeck(deck.id)">Remove Deck</button>
   <a [routerLink]="['/deck', deck.id]">Choose Deck</a>
 </div>

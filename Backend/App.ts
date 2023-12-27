@@ -33,12 +33,14 @@ interface Flashcard {
 
 interface FlashcardsDeck {
     id?: number;
+    title: string;
     flashcards: Flashcard[];
     scores: Score;
 }
 
 let flashcardsDeck: FlashcardsDeck[] = [{
     id: 1,
+    title: 'Capitals',
     flashcards: [
         {
             id: 1,
@@ -145,6 +147,7 @@ let flashcardsDeck: FlashcardsDeck[] = [{
 },
     {
         id:2 ,
+        title: 'Largest Cities',
         flashcards: [
             {
                 id: 1,
@@ -308,6 +311,7 @@ app.post('/flashcardsDeck', (req: Request, res: Response) => {
     let deck = <FlashcardsDeck> req.body;
     const lastDeckId = flashcardsDeck[flashcardsDeck.length - 1]?.id || 0;
     deck.id = lastDeckId + 1;
+    deck.title = req.body.title;
     flashcardsDeck.push(deck);
     res.send(deck);
 });
@@ -334,6 +338,7 @@ app.put('/flashcardsDeck/:id', (req: Request, res: Response) => {
     if (deckIndex !== -1) {
         const updatedDeck = <FlashcardsDeck> req.body;
         updatedDeck.id = id; // Preserve the id
+        updatedDeck.title = req.body.title;
         flashcardsDeck[deckIndex] = updatedDeck;
         res.send(updatedDeck);
     } else {
@@ -352,3 +357,27 @@ app.delete('/flashcardsDeck/:id', (req: Request, res: Response) => {
         res.status(404).send({message: 'Deck not found'});
     }
 });
+
+// GET endpoint to fetch the title of a specific deck:
+app.get('/flashcardsDeck/:id/title', (req: Request, res: Response) => {
+    const id = Number(req.params.id);
+    const deck = flashcardsDeck.find(deck => deck.id === id);
+    if (deck) {
+        res.send(deck.title);
+    } else {
+        res.status(404).send({message: 'Deck not found'});
+    }
+});
+
+// PUT endpoint to update the title of a specific deck:
+app.put('/flashcardsDeck/:id/title', (req: Request, res: Response) => {
+    const id = Number(req.params.id);
+    const deck = flashcardsDeck.find(deck => deck.id === id);
+    if (deck) {
+        deck.title = req.body.title;
+        res.send(deck.title);
+    } else {
+        res.status(404).send({message: 'Deck not found'});
+    }
+});
+

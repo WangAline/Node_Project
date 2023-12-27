@@ -28,4 +28,16 @@ export class FlashcardsService {
   updateScores(deckId: number, scores: {again: number, hard: number, good: number}): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${deckId}/scores`, scores);
   }
+  getDeckTitle(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}/title`);
+  }
+  updateDeckTitle(id: number, title: string): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}/title`, { title });
+  }
+  getDecks(): Observable<any> {
+    console.log('Sending request to:', this.apiUrl); // log the request URL
+    return this.http.get<any>(this.apiUrl).pipe(
+      tap(decks => console.log('Received response:', decks)) // log the response
+    );
+  }
 }

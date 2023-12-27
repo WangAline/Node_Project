@@ -1,4 +1,8 @@
+<div *ngFor="let deck of decks">
+  <button (click)="onDeckChange(deck.id)">{{ deck.title }}</button>
+</div>
 <div *ngIf="currentFlashcard">
+  <h2>{{ title }}</h2>
   <h2>{{ currentFlashcard.question }}</h2>
   <button (click)="onAnswer()">Show Answer</button>
   <div *ngIf="showAnswer">
@@ -6,6 +10,12 @@
     <button (click)="onScore(0)">Hard</button>
     <button (click)="onScore(1)">Good</button>
     <button (click)="onScore(2)">Easy</button>
+  </div>
+  <div *ngIf="scores">
+    <h2>Scores</h2>
+    <div>Again: {{ scores.again }}</div>
+    <div>Hard: {{ scores.hard }}</div>
+    <div>Good: {{ scores.good }}</div>
   </div>
   <button (click)="nextCard()">Next Card</button>
 </div>
