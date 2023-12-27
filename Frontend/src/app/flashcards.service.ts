@@ -18,8 +18,14 @@ export class FlashcardsService {
       tap(flashcards => console.log('Received response:', flashcards)) // log the response
     );
   }
+  getScores(deckId: number): Observable<any> {
+    const url = `${this.apiUrl}/${deckId}/scores`;
+    return this.http.get<any>(url).pipe(
+      tap(scores => console.log('Received response:', scores)) // log the response
+    );
+  }
 
-  updateScore(deckId: number, flashcardId: number, score: number): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${deckId}/flashcards/${flashcardId}`, { score });
+  updateScores(deckId: number, scores: {again: number, hard: number, good: number}): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${deckId}/scores`, scores);
   }
 }

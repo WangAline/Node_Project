@@ -1,7 +1,9 @@
 import * as express from 'express';
+import * as cors from 'cors';
 import { Request, Response} from 'express';
 
 const app = express();
+app.use(cors()); // Enable CORS
 app.use(express.json()); // => to parse request body with http header "content-type": "application/json"
 
 app.get('/api/liveness', (req: Request, res: Response) => {
@@ -12,9 +14,6 @@ console.log('starting...');
 app.listen(3000, () => {
     console.log('Ok, started!');
 });
-
-// const express = require('express');    .... equivalent ... old-school
-// .... does not work !!!     import express from 'express';
 
 let idGenerator = 1;
 function newId() {
