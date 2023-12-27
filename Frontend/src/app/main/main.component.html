@@ -1,21 +1,28 @@
-<div *ngFor="let deck of decks">
-  <button (click)="onDeckChange(deck.id)">{{ deck.title }}</button>
+<div style="display: flex;">
+  <button *ngFor="let deck of decks" (click)="onDeckChange(deck.id)">{{ deck.title }}</button>
 </div>
 <div *ngIf="currentFlashcard">
+  <div *ngIf="!isDeckFinished; else endOfDeck">
   <h2>{{ title }}</h2>
+    <h2>Question :</h2>
   <h2>{{ currentFlashcard.question }}</h2>
   <button (click)="onAnswer()">Show Answer</button>
   <div *ngIf="showAnswer">
-    <p>{{ currentFlashcard.answer }}</p>
-    <button (click)="onScore(0)">Hard</button>
-    <button (click)="onScore(1)">Good</button>
-    <button (click)="onScore(2)">Easy</button>
+    <h2>Answer : {{ currentFlashcard.answer }}</h2>
+    <button (click)="onScore(0)">Again</button>
+    <button (click)="onScore(1)">Hard</button>
+    <button (click)="onScore(2)">Good</button>
+    <button (click)="onScore(3)">Easy</button>
   </div>
   <div *ngIf="scores">
     <h2>Scores</h2>
-    <div>Again: {{ scores.again }}</div>
     <div>Hard: {{ scores.hard }}</div>
     <div>Good: {{ scores.good }}</div>
+    <div>Easy: {{ scores.easy }}</div>
   </div>
   <button (click)="nextCard()">Next Card</button>
+  </div>
 </div>
+<ng-template #endOfDeck>
+  <h2>END OF THE DECK</h2>
+</ng-template>

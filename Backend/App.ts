@@ -20,9 +20,9 @@ function newId() {
     return idGenerator++;
 }
 interface Score {
-    again: number;
     hard: number;
     good: number;
+    easy: number;
 }
 
 interface Flashcard {
@@ -38,8 +38,31 @@ interface FlashcardsDeck {
     scores: Score;
 }
 
-let flashcardsDeck: FlashcardsDeck[] = [{
-    id: 1,
+let flashcardsDeck: FlashcardsDeck[] = [
+    {
+        id:1 ,
+        title: 'Les 3 mousquetaires',
+        flashcards: [
+            {
+                id: 1,
+                question: 'Le premier ?',
+                answer: 'Athos',
+            },
+            {
+                id: 2,
+                question: 'Le deuxieme ?',
+                answer: 'Porthos',
+            },
+            {
+                id: 3,
+                question: 'Le troisieme',
+                answer: 'Aramis',
+            }
+        ],
+        scores: { hard: 0, good: 0, easy: 0}
+    },
+    {
+    id: 2,
     title: 'Capitals',
     flashcards: [
         {
@@ -143,10 +166,10 @@ let flashcardsDeck: FlashcardsDeck[] = [{
             answer: 'Monaco',
         },
     ],
-    scores: {again: 0, hard: 0, good: 0}
+    scores: { hard: 0, good: 0, easy: 0}
 },
     {
-        id:2 ,
+        id:3 ,
         title: 'Largest Cities',
         flashcards: [
             {
@@ -200,8 +223,8 @@ let flashcardsDeck: FlashcardsDeck[] = [{
                 answer: 'Sydney',
             },
         ],
-        scores: {again: 0, hard: 0, good: 0}
-    },
+        scores: { hard: 0, good: 0, easy: 0}
+    }
 ];
 
 

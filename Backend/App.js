@@ -16,8 +16,31 @@ let idGenerator = 1;
 function newId() {
     return idGenerator++;
 }
-let flashcardsDeck = [{
+let flashcardsDeck = [
+    {
         id: 1,
+        title: 'Les 3 mousquetaires',
+        flashcards: [
+            {
+                id: 1,
+                question: 'Le premier ?',
+                answer: 'Athos',
+            },
+            {
+                id: 2,
+                question: 'Le deuxieme ?',
+                answer: 'Porthos',
+            },
+            {
+                id: 3,
+                question: 'Le troisieme',
+                answer: 'Aramis',
+            }
+        ],
+        scores: { hard: 0, good: 0, easy: 0 }
+    },
+    {
+        id: 2,
         title: 'Capitals',
         flashcards: [
             {
@@ -121,10 +144,10 @@ let flashcardsDeck = [{
                 answer: 'Monaco',
             },
         ],
-        scores: { again: 0, hard: 0, good: 0 }
+        scores: { hard: 0, good: 0, easy: 0 }
     },
     {
-        id: 2,
+        id: 3,
         title: 'Largest Cities',
         flashcards: [
             {
@@ -178,8 +201,8 @@ let flashcardsDeck = [{
                 answer: 'Sydney',
             },
         ],
-        scores: { again: 0, hard: 0, good: 0 }
-    },
+        scores: { hard: 0, good: 0, easy: 0 }
+    }
 ];
 // GET endpoint to fetch all flashcards from a deck
 app.get('/flashcardsDeck/:id/flashcards', (req, res) => {

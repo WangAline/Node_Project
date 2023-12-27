@@ -1,3 +1,4 @@
+<input [(ngModel)]="newDeckTitle" placeholder="Deck Title">
 <button (click)="addDeck()">Add Deck</button>
 <div *ngFor="let deck of decks">
   <h2>{{ deck.title }}</h2>

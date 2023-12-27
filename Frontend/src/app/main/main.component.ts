@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
   flashcards: any[] = [];
   showAnswer: boolean = false;
   scores: any;
-  title: string = 'empty';
+  title: string = '';
   decks: any[] = [];
   constructor(private flashcardsService: FlashcardsService) { }
 
@@ -28,32 +28,38 @@ export class MainComponent implements OnInit {
     this.loadDeck(deckId);
   }
 
-  nextCard(): void {
-    this.currentCardIndex++;
-    if (this.currentCardIndex < this.flashcards.length) {
-      this.currentFlashcard = this.flashcards[this.currentCardIndex];
-    } else {
-      console.log('No more cards in this deck');
-    }
-  }
-
   onAnswer(): void {
     this.showAnswer = true;
   }
 
-  onScore(score: number): void {
-    if (score === 0) {
-      this.scores.again++;
-    } else if (score === 1) {
-      this.scores.hard++;
-    } else if (score === 2) {
-      this.scores.good++;
+  isDeckFinished = false;
+  nextCard(): void {
+    if (this.currentCardIndex < this.flashcards.length - 1) {
+      this.currentCardIndex++;
+      this.currentFlashcard = this.flashcards[this.currentCardIndex];
+    } else {
+      this.isDeckFinished = true;
     }
-    this.flashcardsService.updateScores(1, this.scores).subscribe(updatedScores => {
-      console.log('Scores updated:', updatedScores);
-    });
-    this.showAnswer = false;
-    this.nextCard();
+  }
+
+  onScore(score: number): void {
+    if (!this.isDeckFinished) {
+      if (score === 0) { // If "Again" is clicked we don't increment any score and don't move to the next card
+      } else if (score === 1) {
+        this.scores.hard++;
+        this.nextCard();
+      } else if (score === 2) {
+        this.scores.good++;
+        this.nextCard();
+      } else if (score === 3) {
+        this.scores.easy++;
+        this.nextCard();
+      }
+      this.flashcardsService.updateScores(1, this.scores).subscribe(updatedScores => {
+        console.log('Scores updated:', updatedScores);
+      });
+      this.showAnswer = false;
+    }
   }
   updateTitle(newTitle: string): void {
     this.flashcardsService.updateDeckTitle(1, newTitle).subscribe(updatedTitle => { // update the deck title
@@ -61,6 +67,8 @@ export class MainComponent implements OnInit {
     });
   }
   loadDeck(deckId: number): void {
+    this.isDeckFinished = false;
+    this.currentCardIndex = 0;
     this.flashcardsService.getFlashcards(deckId).subscribe(flashcards => {
       this.flashcards = flashcards;
       this.currentFlashcard = this.flashcards[this.currentCardIndex];

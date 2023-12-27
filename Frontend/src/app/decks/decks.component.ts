@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DecksService } from '../decks.service';
+import { FlashcardsService } from '../flashcards.service';
 
 @Component({
   selector: 'app-decks',
@@ -7,24 +7,29 @@ import { DecksService } from '../decks.service';
 })
 export class DecksComponent implements OnInit {
   decks: any[] = [];
+  newDeckTitle = '';
 
-  constructor(private decksService: DecksService) { }
+
+  constructor(private flashcardsService: FlashcardsService) { }
 
   ngOnInit(): void {
-    this.decksService.getDecks().subscribe(decks => {
+    this.flashcardsService.getDecks().subscribe(decks => {
       console.log('Fetched decks:', decks); // log fetched decks
       this.decks = decks;
     });
   }
 
   addDeck() {
-    this.decksService.addDeck().subscribe(deck => {
-      this.decks.push(deck);
-    });
+    if (this.newDeckTitle.trim()) {
+      this.flashcardsService.addDeck(this.newDeckTitle).subscribe((deck: any) => {
+        this.decks.push(deck);
+        this.newDeckTitle = '';
+      });
+    }
   }
 
   removeDeck(id: number) {
-    this.decksService.removeDeck(id).subscribe(() => {
+    this.flashcardsService.removeDeck(id).subscribe(() => {
       this.decks = this.decks.filter(deck => deck.id !== id);
     });
   }

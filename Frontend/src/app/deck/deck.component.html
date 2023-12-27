@@ -1,5 +1,5 @@
 <div *ngIf="deck">
-  <h2>Deck {{ deck.title }} Id {{ deck.id }}</h2>
+  <h2>Deck {{ deck.title }} (Id {{ deck.id }})</h2>
   <div *ngFor="let flashcard of deck.flashcards">
     <p>{{ flashcard.question }}</p>
     <button (click)="removeFlashcard(flashcard.id)">Delete Card</button>

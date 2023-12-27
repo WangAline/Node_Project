@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { DecksComponent } from './decks/decks.component';
 import { DeckComponent } from './deck/deck.component';
-import { DecksService } from './decks.service';
 import {FlashcardsService} from "./flashcards.service";
 
 @NgModule({
@@ -27,7 +26,7 @@ import {FlashcardsService} from "./flashcards.service";
     NgbModule,
     FormsModule,
   ],
-  providers: [DecksService, FlashcardsService],
+  providers: [ FlashcardsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
