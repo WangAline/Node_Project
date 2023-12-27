@@ -1,11 +1,11 @@
 <div *ngIf="deck">
-  <h2>Deck {{ deck.title }} (Id {{ deck.id }})</h2>
+  <h2>{{ deck.id }}. Deck {{ deck.title }}</h2>
   <div *ngFor="let flashcard of deck.flashcards">
     <p>{{ flashcard.question }}</p>
     <button (click)="removeFlashcard(flashcard.id)">Delete Card</button>
   </div>
   <div>
-    <input [(ngModel)]="newFlashcard.question" placeholder="Question">
+    <input [(ngModel)]="newFlashcard.question" placeholder="New Question">
     <input [(ngModel)]="newFlashcard.answer" placeholder="Answer">
     <button (click)="addFlashcard()">Add Card</button>
   </div>

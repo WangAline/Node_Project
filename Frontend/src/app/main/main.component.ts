@@ -80,4 +80,11 @@ export class MainComponent implements OnInit {
       this.title = title;
     });
   }
+
+  previousCard(): void {
+    if (this.currentCardIndex > 0) {
+      this.currentCardIndex--;
+      this.currentFlashcard = this.flashcards[this.currentCardIndex];
+    }
+  }
 }

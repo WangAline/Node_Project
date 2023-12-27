@@ -35,6 +35,11 @@ let flashcardsDeck = [
                 id: 3,
                 question: 'Le troisieme',
                 answer: 'Aramis',
+            },
+            {
+                id: 4,
+                question: 'Le heros ?',
+                answer: 'D\'Artagnan',
             }
         ],
         scores: { hard: 0, good: 0, easy: 0 }
@@ -43,106 +48,26 @@ let flashcardsDeck = [
         id: 2,
         title: 'Capitals',
         flashcards: [
-            {
-                id: 1,
-                question: 'What is the capital of France?',
-                answer: 'Paris',
-            },
-            {
-                id: 2,
-                question: 'What is the capital of Bhutan?',
-                answer: 'Thimphu',
-            },
-            {
-                id: 3,
-                question: 'What is the capital of Suriname?',
-                answer: 'Paramaribo',
-            },
-            {
-                id: 4,
-                question: 'What is the capital of Eritrea?',
-                answer: 'Asmara',
-            },
-            {
-                id: 5,
-                question: 'What is the capital of Kyrgyzstan?',
-                answer: 'Bishkek',
-            },
-            {
-                id: 6,
-                question: 'What is the capital of Vanuatu?',
-                answer: 'Port Vila',
-            },
-            {
-                id: 7,
-                question: 'What is the capital of Lesotho?',
-                answer: 'Maseru',
-            },
-            {
-                id: 8,
-                question: 'What is the capital of Djibouti?',
-                answer: 'Djibouti',
-            },
-            {
-                id: 9,
-                question: 'What is the capital of Belize?',
-                answer: 'Belmopan',
-            },
-            {
-                id: 10,
-                question: 'What is the capital of Andorra?',
-                answer: 'Andorra la Vella',
-            },
-            {
-                id: 11,
-                question: 'What is the capital of Maldives?',
-                answer: 'Malé',
-            },
-            {
-                id: 12,
-                question: 'What is the capital of Seychelles?',
-                answer: 'Victoria',
-            },
-            {
-                id: 13,
-                question: 'What is the capital of Saint Kitts and Nevis?',
-                answer: 'Basseterre',
-            },
-            {
-                id: 14,
-                question: 'What is the capital of San Marino?',
-                answer: 'San Marino',
-            },
-            {
-                id: 15,
-                question: 'What is the capital of Comoros?',
-                answer: 'Moroni',
-            },
-            {
-                id: 16,
-                question: 'What is the capital of Cape Verde?',
-                answer: 'Praia',
-            },
-            {
-                id: 17,
-                question: 'What is the capital of Burundi?',
-                answer: 'Gitega',
-            },
-            {
-                id: 18,
-                question: 'What is the capital of Guyana?',
-                answer: 'Georgetown',
-            },
-            {
-                id: 19,
-                question: 'What is the capital of Liechtenstein?',
-                answer: 'Vaduz',
-            },
-            {
-                id: 20,
-                question: 'What is the capital of Monaco?',
-                answer: 'Monaco',
-            },
+            { id: 1, question: 'What is the capital of France?', answer: 'Paris', },
+            { id: 2, question: 'What is the capital of Bhutan?', answer: 'Thimphu', },
+            { id: 3, question: 'What is the capital of Suriname?', answer: 'Paramaribo', },
+            { id: 4, question: 'What is the capital of Eritrea?', answer: 'Asmara', },
+            { id: 5, question: 'What is the capital of Kyrgyzstan?', answer: 'Bishkek', },
+            { id: 6, question: 'What is the capital of Vanuatu?', answer: 'Port Vila', },
+            { id: 7, question: 'What is the capital of Lesotho?', answer: 'Maseru', },
+            { id: 8, question: 'What is the capital of Djibouti?', answer: 'Djibouti', },
+            { id: 9, question: 'What is the capital of Belize?', answer: 'Belmopan', },
+            { id: 10, question: 'What is the capital of Andorra?', answer: 'Andorra la Vella', },
+            { id: 11, question: 'What is the capital of Maldives?', answer: 'Malé', },
+            { id: 12, question: 'What is the capital of Seychelles?', answer: 'Victoria', },
+            { id: 13, question: 'What is the capital of Saint Kitts and Nevis?', answer: 'Basseterre', },
+            { id: 14, question: 'What is the capital of San Marino?', answer: 'San Marino', },
+            { id: 15, question: 'What is the capital of Comoros?', answer: 'Moroni', },
+            { id: 16, question: 'What is the capital of Cape Verde?', answer: 'Praia', },
+            { id: 17, question: 'What is the capital of Burundi?', answer: 'Gitega', },
+            { id: 18, question: 'What is the capital of Guyana?', answer: 'Georgetown', },
+            { id: 19, question: 'What is the capital of Liechtenstein?', answer: 'Vaduz', },
+            { id: 20, question: 'What is the capital of Monaco?', answer: 'Monaco', },
         ],
         scores: { hard: 0, good: 0, easy: 0 }
     },
@@ -150,56 +75,33 @@ let flashcardsDeck = [
         id: 3,
         title: 'Largest Cities',
         flashcards: [
-            {
-                id: 1,
-                question: 'What is the largest city in the world by population?',
-                answer: 'Tokyo',
-            },
-            {
-                id: 2,
-                question: 'What is the largest city in the Americas by population?',
-                answer: 'Mexico City',
-            },
-            {
-                id: 3,
-                question: 'What is the largest city in Africa by population?',
-                answer: 'Lagos',
-            },
-            {
-                id: 4,
-                question: 'What is the largest city in Europe by population?',
-                answer: 'Istanbul',
-            },
-            {
-                id: 5,
-                question: 'What is the largest city in Australia by population?',
-                answer: 'Sydney',
-            },
-            {
-                id: 6,
-                question: 'What is the largest city in Antarctica by population?',
-                answer: 'McMurdo Station',
-            },
-            {
-                id: 7,
-                question: 'What is the largest city in Asia by population?',
-                answer: 'Tokyo',
-            },
-            {
-                id: 8,
-                question: 'What is the largest city in South America by population?',
-                answer: 'Sao Paulo',
-            },
-            {
-                id: 9,
-                question: 'What is the largest city in North America by population?',
-                answer: 'Mexico City',
-            },
-            {
-                id: 10,
-                question: 'What is the largest city in Oceania by population?',
-                answer: 'Sydney',
-            },
+            { id: 1, question: 'What is the largest city in the world by population?', answer: 'Tokyo', },
+            { id: 2, question: 'What is the largest city in the Americas by population?', answer: 'Mexico City', },
+            { id: 3, question: 'What is the largest city in Africa by population?', answer: 'Lagos', },
+            { id: 4, question: 'What is the largest city in Europe by population?', answer: 'Istanbul', },
+            { id: 5, question: 'What is the largest city in Australia by population?', answer: 'Sydney', },
+            { id: 6, question: 'What is the largest city in Antarctica by population?', answer: 'McMurdo Station', },
+            { id: 7, question: 'What is the largest city in Asia by population?', answer: 'Tokyo', },
+            { id: 8, question: 'What is the largest city in South America by population?', answer: 'Sao Paulo', },
+            { id: 9, question: 'What is the largest city in North America by population?', answer: 'Mexico City', },
+            { id: 10, question: 'What is the largest city in Oceania by population?', answer: 'Sydney', },
+        ],
+        scores: { hard: 0, good: 0, easy: 0 }
+    },
+    {
+        id: 4,
+        title: 'Science Trivia',
+        flashcards: [
+            { id: 1, question: 'What is the largest planet in our solar system?', answer: 'Jupiter' },
+            { id: 2, question: 'What is the chemical symbol for gold?', answer: 'Au' },
+            { id: 3, question: 'What is the boiling point of water in degrees Celsius?', answer: '100 degrees Celsius' },
+            { id: 4, question: 'What is the formula for calculating force?', answer: 'Force = Mass × Acceleration (F = ma)' },
+            { id: 5, question: 'What is the process by which plants convert sunlight into chemical energy?', answer: 'Photosynthesis' },
+            { id: 6, question: 'What is the unit of measurement for electric current?', answer: 'Ampere (A)' },
+            { id: 7, question: 'Who proposed the theory of relativity?', answer: 'Albert Einstein' },
+            { id: 8, question: 'What is the atomic number of carbon?', answer: '6' },
+            { id: 9, question: 'What is the largest organ in the human body?', answer: 'Skin' },
+            { id: 10, question: 'What is the SI unit for measuring frequency?', answer: 'Hertz (Hz)' },
         ],
         scores: { hard: 0, good: 0, easy: 0 }
     }
