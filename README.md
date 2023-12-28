@@ -4,12 +4,18 @@
 This is a Flashcards application built with Angular. It allows users to create decks of flashcards, add flashcards to a deck, and track their learning progress.
 It is based on the existing app Anki.
 
+## Using The Application
+
+Refer to the BUILD.md file present on the github repository root.
+
 ## Github Repository
 
 https://github.com/WangAline/Node_Project/
 
 ## Credits
 Marion De Sousa, Aline Wang, Hubert Leroy
+
+Contact : hubert.leroy@edu.devinci.fr
 
 # Use case of the app
 
