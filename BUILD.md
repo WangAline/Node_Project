@@ -17,7 +17,8 @@ Clone the repository to your local machine using the following command:
 
 ## Installing the Dependencies
 
-`cd the/directory/where/you/cloned/the/project`
+`cd the/directory/where/you/cloned/the/project`  
+
 `npm install`
 
 ## Building the Application
