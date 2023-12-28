@@ -64,7 +64,7 @@ And now add a new deck named "Chicken knowledge"  :
 
 We can choose the deck "Capitals"  :  
 ![Alt text](Screenshots/decks/choosing_deck_capitals.png)
-
+  
 And we arrive on the deck page of "Capitals"  :  
 ![Alt text](Screenshots/decks/after_choosing_deck_capitals.png)
 
@@ -125,5 +125,5 @@ We arrive at the end of the deck  :
 The other decks buttons are still usable so we can switch to another deck to learn  :  
 ![Alt text](Screenshots/deck/choosed_a_new_deck.png)
 
-#Thanks For Reading, Happy New Year
+# Thanks For Reading, Happy New Year
 
