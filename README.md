@@ -70,7 +70,8 @@ And we arrive on the deck page of "Capitals"  :
 
 We come back to the decks using the navbar and choose "3 mousquetaires"  :  
  ![Alt text](Screenshots/decks/choosing_deck_3_mousquetaires.png)
- And we arrive on our next part.  
+
+And we arrive on our next part.  
  ![Alt text](Screenshots/deck/after_choosing_3_mousquetaires.png)
 
 ## Third Page
@@ -96,7 +97,7 @@ Our next step is to go back to decks page to choose "Chicken knowledge"  :
 We can see that the added deck is empty  :  
 ![Alt text](Screenshots/deck/empty_chicken_knowledge.png)
 
-So we can add add a card  :  
+So we can add a card  :  
 ![Alt text](Screenshots/deck/chicken_knowledge_adding_first.png) 
 
 which appears in the list  :  
