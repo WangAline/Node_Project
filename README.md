@@ -16,7 +16,7 @@ Marion De Sousa, Aline Wang, Hubert Leroy
 We arrive on the first page which by default displayes the first card of the first deck  : 
 ![Alt text](Screenshots/main/main_on_start.png)
 
-Then we press answer to get the first card question answer :
+Then we press answer to get the first card question answer  :
 
 ![Alt text](Screenshots/main/main_with_answer.png)
 
