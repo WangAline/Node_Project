@@ -50,3 +50,5 @@ You can run the application using the command:
 The application will be available at http://localhost:4200/.
 
 Open your web browser and navigate to `http://localhost:4200/`
+
+# You can now use our app, Happy Learning !
