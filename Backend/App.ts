@@ -4,7 +4,7 @@ import { Request, Response} from 'express';
 
 const app = express();
 app.use(cors()); // Enable CORS
-app.use(express.json()); // => to parse request body with http header "content-type": "application/json"
+app.use(express.json()); // to parse request body with http header "content-type": "application/json"
 
 app.get('/api/liveness', (req: Request, res: Response) => {
     res.send('Hello !!!');
