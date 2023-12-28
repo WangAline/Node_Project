@@ -15,8 +15,6 @@ https://github.com/WangAline/Node_Project/
 ## Credits
 Marion De Sousa, Aline Wang, Hubert Leroy
 
-Contact : hubert.leroy@edu.devinci.fr
-
 # Use case of the app
 
 ## First Page
