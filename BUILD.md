@@ -26,7 +26,7 @@ You can build the application using the Angular CLI. The build artifacts will be
 
 Run the command :
 
-`ng build`
+`ng build`  
 
 ## Running the Backend
 
