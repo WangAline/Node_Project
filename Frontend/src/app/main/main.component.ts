@@ -19,30 +19,30 @@ export class MainComponent implements OnInit {
     this.flashcardsService.getDecks().subscribe(decks => { // fetch the decks
       this.decks = decks;
       if (this.decks.length > 0) {
-        this.loadDeck(this.decks[0].id);
+        this.loadDeck(this.decks[0].id); // load the first deck
       }
     });
 
   }
   onDeckChange(deckId: number): void {
-    this.loadDeck(deckId);
+    this.loadDeck(deckId); // load the selected deck when the user clicks on the deck button
   }
 
   onAnswer(): void {
-    this.showAnswer = true;
+    this.showAnswer = true; //display the answer when the user clicks on the "Show Answer" button
   }
 
   isDeckFinished = false;
   nextCard(): void {
     if (this.currentCardIndex < this.flashcards.length - 1) {
-      this.currentCardIndex++;
+      this.currentCardIndex++; // move to the next card index
       this.currentFlashcard = this.flashcards[this.currentCardIndex];
     } else {
-      this.isDeckFinished = true;
+      this.isDeckFinished = true; // if the deck is finished, display the "End of the Deck" message
     }
   }
 
-  onScore(score: number): void {
+  onScore(score: number): void { // update the scores and move to the next card when one of the "Hard", "Good", or "Easy" buttons is clicked
     if (!this.isDeckFinished) {
       if (score === 0) { // If "Again" is clicked we don't increment any score and don't move to the next card
       } else if (score === 1) {
@@ -61,7 +61,7 @@ export class MainComponent implements OnInit {
       this.showAnswer = false;
     }
   }
-  updateTitle(newTitle: string): void {
+  updateTitle(newTitle: string): void { //feature to update the deck title
     this.flashcardsService.updateDeckTitle(1, newTitle).subscribe(updatedTitle => { // update the deck title
       this.title = updatedTitle;
     });
